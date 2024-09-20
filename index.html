@@ -3,26 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Portfolio</title>
+    <title>Stefan Milanović - Portfolio</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
+            text-align: center;
         }
+
         header {
             background-color: #333;
             color: white;
             padding: 1em;
             text-align: center;
         }
+
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
         section {
+            display: none;
             margin: 20px;
             padding: 20px;
             background-color: white;
             border-radius: 8px;
+            text-align: left;
         }
+
         h2 {
             color: #333;
         }
@@ -35,56 +55,71 @@
     <p>Master Data Manager</p>
 </header>
 
-<section>
+<!-- Buttons for different sections -->
+<div>
+    <button onclick="showSection('about')">About Me</button>
+    <button onclick="showSection('experience')">Experience</button>
+    <button onclick="showSection('skills')">Skills</button>
+    <button onclick="showSection('projects')">Projects</button>
+    <button onclick="showSection('education')">Education</button>
+</div>
+
+<!-- Sections (hidden by default) -->
+<section id="about">
     <h2>About Me</h2>
-    <p>[Logistics Engineer specializing in Master Data Management with a proven track record in the information technology and services industry. Led a team of MD specialists and analysts to model, maintain, and manage master data in core systems while ensuring high data quality standards and alignment across cross-functional teams. Experienced Business and Data Analyst with expertise in data collection, modeling, governance, analytics, and presentation. Proficient in documenting processes and building a knowledge base. Demonstrates strong project execution skills and the ability to foster collaborative relationships with stakeholders. Known for delivering timely and insightful reports to staff, departmental members, and executive management, highlighting data findings and their impact on organizational growth and success. Enthusiastic, inquisitive, and dedicated to continuous learning and development.]</p>
+    <p>[Write a short introduction about yourself here]</p>
 </section>
 
-<section>
+<section id="experience">
     <h2>Experience</h2>
     <ul>
         <li><strong>Job Title at Company</strong> - Date Range</li>
-        <p>[Brief description of what you did in this role, the skills you used, and key achievements.]</p>
-        
-        <li><strong>Another Job Title at Company</strong> - Date Range</li>
-        <p>[Same as above for this role.]</p>
+        <p>[Brief description of what you did in this job]</p>
+        <li><strong>Another Job Title</strong> - Date Range</li>
+        <p>[Description of your role and achievements]</p>
     </ul>
 </section>
 
-<section>
+<section id="skills">
     <h2>Skills</h2>
     <ul>
         <li>[Skill 1]</li>
         <li>[Skill 2]</li>
         <li>[Skill 3]</li>
-        <li>[And so on...]</li>
     </ul>
 </section>
 
-<section>
+<section id="projects">
     <h2>Projects</h2>
     <ul>
         <li><strong>Project Name</strong></li>
-        <p>[Brief description of the project and the technologies/tools you used.]</p>
-        
+        <p>[Description of the project and the technologies/tools you used]</p>
         <li><strong>Another Project</strong></li>
-        <p>[Description of this project.]</p>
+        <p>[Details about this project]</p>
     </ul>
 </section>
 
-<section>
+<section id="education">
     <h2>Education</h2>
     <ul>
         <li><strong>Degree Title</strong> - School Name, Graduation Year</li>
-        <p>[Brief description of relevant coursework, honors, or distinctions.]</p>
+        <p>[Brief description of relevant coursework, honors, or distinctions]</p>
     </ul>
 </section>
 
-<section>
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile">LinkedIn Profile</a></p>
-</section>
+<!-- JavaScript to show the correct section when a button is clicked -->
+<script>
+    function showSection(sectionId) {
+        // Hide all sections
+        var sections = document.querySelectorAll('section');
+        sections.forEach(function(section) {
+            section.style.display = 'none';
+        });
+
+        // Show the selected section
+        document.getElementById(sectionId).style.display = 'block';
+    }
+</script>
 
 </body>
 </html>
