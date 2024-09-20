@@ -4,121 +4,156 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stefan Milanović - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
+        /* General Styling */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
             margin: 0;
-            padding: 0;
-            text-align: center;
+            font-family: 'Open Sans', sans-serif;
+            background-color: #0a192f;
+            color: #ccd6f6;
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5em;
+            background-color: #0a192f;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a {
+            color: #64ffda;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+        }
+
+        /* Section Styling */
+        section {
+            min-height: 100vh;
+            padding: 80px 10%;
         }
 
         header {
-            background-color: #333;
-            color: white;
-            padding: 1em;
             text-align: center;
+            margin-top: 20vh;
         }
 
-        button {
-            margin: 10px;
-            padding: 10px 20px;
-            background-color: #333;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+        header h1 {
+            font-size: 3em;
+            color: #64ffda;
         }
 
-        button:hover {
-            background-color: #555;
-        }
-
-        section {
-            display: none;
-            margin: 20px;
-            padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            text-align: left;
+        header p {
+            font-size: 1.2em;
+            color: #8892b0;
         }
 
         h2 {
-            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #64ffda;
+        }
+
+        .about, .experience, .projects, .contact {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.7s ease-out;
+        }
+
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        footer {
+            text-align: center;
+            padding: 50px;
+            color: #8892b0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2em;
+            }
+
+            nav a {
+                margin: 0 10px;
+                font-size: 0.9em;
+            }
         }
     </style>
 </head>
 <body>
 
+<!-- Navigation -->
+<nav>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<!-- Home Section -->
 <header>
     <h1>Stefan Milanović</h1>
     <p>Master Data Manager</p>
 </header>
 
-<!-- Buttons for different sections -->
-<div>
-    <button onclick="showSection('about')">About Me</button>
-    <button onclick="showSection('experience')">Experience</button>
-    <button onclick="showSection('skills')">Skills</button>
-    <button onclick="showSection('projects')">Projects</button>
-    <button onclick="showSection('education')">Education</button>
-</div>
-
-<!-- Sections (hidden by default) -->
-<section id="about">
+<!-- About Section -->
+<section id="about" class="about">
     <h2>About Me</h2>
-    <p>[Write a short introduction about yourself here]</p>
+    <p>Logistics Engineer specializing in Master Data Management with a proven track record in the information technology and services industry. Led a team of MD specialists and analysts to model, maintain, and manage master data in core systems while ensuring high data quality standards and alignment across cross-functional teams. Experienced Business and Data Analyst with expertise in data collection, modeling, governance, analytics, and presentation. Proficient in documenting processes and building a knowledge base. Demonstrates strong project execution skills and the ability to foster collaborative relationships with stakeholders. Known for delivering timely and insightful reports to staff, departmental members, and executive management, highlighting data findings and their impact on organizational growth and success. Enthusiastic, inquisitive, and dedicated to continuous learning and development.</p>
 </section>
 
-<section id="experience">
+<!-- Experience Section -->
+<section id="experience" class="experience">
     <h2>Experience</h2>
-    <ul>
-        <li><strong>Job Title at Company</strong> - Date Range</li>
-        <p>[Brief description of what you did in this job]</p>
-        <li><strong>Another Job Title</strong> - Date Range</li>
-        <p>[Description of your role and achievements]</p>
-    </ul>
+    <p>[List your work experience and achievements]</p>
 </section>
 
-<section id="skills">
-    <h2>Skills</h2>
-    <ul>
-        <li>[Skill 1]</li>
-        <li>[Skill 2]</li>
-        <li>[Skill 3]</li>
-    </ul>
-</section>
-
-<section id="projects">
+<!-- Projects Section -->
+<section id="projects" class="projects">
     <h2>Projects</h2>
-    <ul>
-        <li><strong>Project Name</strong></li>
-        <p>[Description of the project and the technologies/tools you used]</p>
-        <li><strong>Another Project</strong></li>
-        <p>[Details about this project]</p>
-    </ul>
+    <p>[Showcase your top projects]</p>
 </section>
 
-<section id="education">
-    <h2>Education</h2>
-    <ul>
-        <li><strong>Degree Title</strong> - School Name, Graduation Year</li>
-        <p>[Brief description of relevant coursework, honors, or distinctions]</p>
-    </ul>
+<!-- Contact Section -->
+<section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
 </section>
 
-<!-- JavaScript to show the correct section when a button is clicked -->
+<!-- Footer -->
+<footer>
+    <p>© 2024 Your Name. All rights reserved.</p>
+</footer>
+
 <script>
-    function showSection(sectionId) {
-        // Hide all sections
-        var sections = document.querySelectorAll('section');
-        sections.forEach(function(section) {
-            section.style.display = 'none';
-        });
+    // Fade-in effect when scrolling to sections
+    const sections = document.querySelectorAll('section');
 
-        // Show the selected section
-        document.getElementById(sectionId).style.display = 'block';
-    }
+    window.addEventListener('scroll', function() {
+        const scrollPosition = window.scrollY + window.innerHeight;
+        sections.forEach(section => {
+            if (scrollPosition > section.offsetTop + section.offsetHeight / 3) {
+                section.classList.add('visible');
+            }
+        });
+    });
 </script>
 
 </body>
